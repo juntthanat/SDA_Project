@@ -76,8 +76,9 @@ function App() {
   function calculateXPosition(anchorXPosition, trackerXPosition, tracker){
     // let percent = trackerXPosition.x / anchorXPosition;
     let percent = Math.abs(trackerXPosition.rot_x) / anchorXPosition;
-    let result = 70 * percent;
-    let string = (result*100).toString() + "%"
+    let result = (70 * percent) + 5;
+    let string = (result).toString() + "%"
+    console.log(string)
     tracker.style.left = string;
     return string;
   }
@@ -85,8 +86,8 @@ function App() {
   function calculateYPosition(anchorYPosition, trackerYPosition, tracker){
     // let percent = trackerYPosition.y / anchorYPosition;
     let percent = Math.abs(trackerYPosition.rot_y) / anchorYPosition;
-    let result = 80 * percent;
-    let string = (result*100).toString() + "%"
+    let result = (80 * percent) + 10;
+    let string = (result).toString() + "%"
     tracker.style.left = string;
     return string;
   }
