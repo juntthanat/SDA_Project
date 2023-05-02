@@ -29,8 +29,8 @@ function App() {
 
     // Use Blender to check the name and path
     const container = containerRef.current;
-    const anchorX = 5;
-    const anchorY = 5;
+    const anchorX = 5.4;
+    const anchorY = 9.3;
 
     createTracker(container, 'maxwell');
     
@@ -55,7 +55,10 @@ function App() {
   }, [isReady]);
 
   function createTracker(container, trackerId){
+    
     container.innerHTML= "<div class='tracker' id='"+ trackerId +"'></div>";
+    document.getElementById('information-container').innerHTML = ""
+
   }
 
   // Position (All this because of how to page is setup without the search bar would be easier i use percent because it will be interactive)
@@ -88,7 +91,7 @@ function App() {
     let percent = Math.abs(trackerYPosition.rot_y) / anchorYPosition;
     let result = (80 * percent) + 10;
     let string = (result).toString() + "%"
-    tracker.style.left = string;
+    tracker.style.top = string;
     return string;
   }
   
@@ -100,11 +103,7 @@ function App() {
           <div className='anchor' id="anchor1">A1</div>
           <div className='anchor' id="anchor2">A2</div>
           <div className='anchor' id="anchor3">A3</div>
-          <div id='container'>
-
-          </div>
-          
-          {/* <div className='tracker' id='test'></div> */}
+          <div id='container'></div>
           <div id="scale">
             <div id="verticle"></div>
             <div id="horizontal"></div>
