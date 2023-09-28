@@ -27,7 +27,6 @@ function App() {
   useEffect(() => {
     if (!isReady) return;
 
-    // Use Blender to check the name and path
     const container = containerRef.current;
     const anchorX = 5.4;
     const anchorY = 9.3;
@@ -77,7 +76,6 @@ function App() {
   
 
   function calculateXPosition(anchorXPosition, trackerXPosition, tracker){
-    // let percent = trackerXPosition.x / anchorXPosition;
     let percent = Math.abs(trackerXPosition.rot_x) / anchorXPosition;
     let result = (70 * percent) + 5;
     let string = (result).toString() + "%"
@@ -87,7 +85,6 @@ function App() {
   }
 
   function calculateYPosition(anchorYPosition, trackerYPosition, tracker){
-    // let percent = trackerYPosition.y / anchorYPosition;
     let percent = Math.abs(trackerYPosition.rot_y) / anchorYPosition;
     let result = (80 * percent) + 10;
     let string = (result).toString() + "%"
@@ -111,12 +108,6 @@ function App() {
           {/* Test */}
         </div>
         <div id="information-container">
-          <div id="search-bar"> search bar </div>
-          <div id="pet-information">
-            {/* will create javascript later */}
-
-
-          </div>
         </div>
       </div>
     </>
